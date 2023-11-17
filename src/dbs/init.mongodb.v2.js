@@ -2,8 +2,9 @@
 const { db: { host, name, port } } = require('../configs/config.mongo')
 const mongoose = require('mongoose')
 const { countConnect } = require('../helpers/check.connect')
-const connectUrl = 'mongodb://127.0.0.1:27017/nodejs_database'
-// const connectUrl = `mongodb://${host}:${port}/${name}`
+// const connectUrl = 'mongodb://127.0.0.1:27017/nodejs_database'
+const connectUrl = `mongodb://${host}:${port}/${name}`
+console.log(connectUrl)
 class Database {
     constructor() {
         this.connect()
