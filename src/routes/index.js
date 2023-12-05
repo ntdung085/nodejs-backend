@@ -2,9 +2,16 @@
 
 const express = require('express')
 const router = express.Router()
+const { apiKey, permission } = require('../auth/checkAuth')
 
 // rounter.user
 // move router from main app to router.
+
+// check apikey
+// router.use(apiKey)
+
+// check permission
+// router.use(permission('0000'))
 
 router.use('/v1/api', require('./acccess'))
 

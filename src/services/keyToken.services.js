@@ -1,6 +1,6 @@
 'use strict'
 
-const keytokenModel = require("../models/keytoken.model")
+const keytokenModel = require('../models/keytoken.model')
 
 class KeyTokenServices {
     static createKeyToken = async ({ shopId, publicKey, privateKey }) => {
