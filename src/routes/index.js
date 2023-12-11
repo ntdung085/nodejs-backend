@@ -8,10 +8,10 @@ const { apiKey, permission } = require('../auth/checkAuth')
 // move router from main app to router.
 
 // check apikey
-// router.use(apiKey)
+router.use(apiKey)
 
 // check permission
-// router.use(permission('0000'))
+router.use(permission('0000'))
 
 router.use('/v1/api', require('./acccess'))
 
