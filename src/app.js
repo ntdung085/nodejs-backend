@@ -25,16 +25,17 @@ require('./dbs/init.mongodb.v2')
 const { checkOverload } = require('./helpers/check.connect')
 checkOverload()
 // init router
-// 5. move to router.
+// move to router.
 app.use('', require('./routes'))
-// handle error
 
+// handle error middleware
 app.use((req, res, next) => {
     const error = new Error('Not found')
     error.status = 404
     next(error)
 })
 
+// handle error
 app.use((error, req, res, next) => {
     const statusCode = error.status || 500
     return res.status(statusCode).json({
