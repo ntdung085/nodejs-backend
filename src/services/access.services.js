@@ -73,11 +73,11 @@ class AccessService {
             const tokens = await createTokenPair({ shopId: newShop.id, email: newShop.email }, publicKey, privateKey)
             console.log("Created token success:", tokens)
             return {
-                code: 201,
-                metadata: {
-                    shop: getInfoData({ filed: ['_id', 'name', 'email'], object: newShop }),
-                    tokens
-                }
+                // code: 201,
+                // metadata: {
+                shop: getInfoData({ filed: ['_id', 'name', 'email'], object: newShop }),
+                tokens
+                // }
             }
         }
         return {
