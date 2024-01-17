@@ -39,5 +39,5 @@ class CreatedResponse extends SuccessResponse {
 }
 
 module.exports = {
-    OkResponse, CreatedResponse
+    OkResponse, CreatedResponse, SuccessResponse
 }
