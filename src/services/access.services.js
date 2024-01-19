@@ -16,6 +16,14 @@ const RolesShop = {
     MAIN: '04'
 }
 class AccessService {
+
+    static logout = async (keyStore) => {
+        const delKey = await KeyTokenServices.removeKeyById(keyStore._id)
+        console.log(delKey)
+        return delKey
+    }
+
+
     static login = async ({ email, password, refreshToken = null }) => {
         // 1.check email in database
         // 2. match password

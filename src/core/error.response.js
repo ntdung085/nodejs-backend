@@ -5,13 +5,15 @@ const { response } = require("../app")
 const StatusCode = {
     FORBIDDEN: 403,
     CONFICT: 409,
-    UNAUTHORIZED: 401
+    UNAUTHORIZED: 401,
+    NOT_FOUND: 404
 }
 
 const ReasonStatusCode = {
     FORBIDDEN: 'Bad request error',
     CONFICT: 'Confict error',
-    UNAUTHORIZED: 'Unauthorized'
+    UNAUTHORIZED: 'Unauthorized',
+    NOT_FOUND: 'Not found'
 }
 
 class ErrorResponse extends Error {
@@ -40,8 +42,17 @@ class AuthFailureError extends ErrorResponse {
 }
 
 
+class NotFoundError extends ErrorResponse {
+    constructor(message = ReasonStatusCode.NOT_FOUND, statusCode = StatusCode.NOT_FOUND) {
+        super(message, statusCode)
+    }
+}
+
+
+
 module.exports = {
     ConfictRequestError,
     BadRequestError,
-    AuthFailureError
+    AuthFailureError,
+    NotFoundError
 }
